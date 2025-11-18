@@ -5,7 +5,7 @@ import schoolLogo from './assets/kando.jpg'
 import './App.css'
 
 
-
+/*
 const ListaKomponens = ({elemek}) => (
   <ol>
     {elemek.map((elem, index) => (
@@ -13,6 +13,22 @@ const ListaKomponens = ({elemek}) => (
     ))}
   </ol>
 )
+*/
+const Pizzak = ({pizzak}) => {
+
+  return (
+    <>
+    {pizzak.map((pizza, index) => (
+      <div key={index}>
+        <h1>{pizza.id}</h1>
+        <h2>{pizza.name}</h2>
+        <img src={pizza.image_url} alt="Pizzáról egy fénykép" />
+      </div>
+    ))}
+    </>
+  )
+}
+
 
 export const App = () => {
   const [adatok, setAdatok] = useState([])
@@ -27,7 +43,7 @@ export const App = () => {
 
   return (
     <>
-     <ListaKomponens elemek={adatok}></ListaKomponens>
+     <Pizzak pizzak={adatok}/>
     </>
   )
 }
